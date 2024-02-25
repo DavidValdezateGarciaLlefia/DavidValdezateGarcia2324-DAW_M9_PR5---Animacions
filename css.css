@@ -1,0 +1,115 @@
+body {
+    height: 1000px;
+    position: relative; 
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    height: 300px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 300px;
+}
+
+.pokedex {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+}
+
+.pikachu {
+    width: 250px;
+    height: 250px;
+    transform: rotate(20deg); 
+}
+
+.pokedex li {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.pokedex img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+footer {
+    height: 300px;
+    position: relative; 
+}
+
+footer:hover .ayudante {
+    opacity: 1;
+}
+
+.ayudante {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(100%, 0) rotate(-20deg); 
+    filter: drop-shadow(-2px 2px 15px rgba(0, 0, 0, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.7s ease;
+    height: 100px;
+    width: 100px;
+    animation: girar 12s linear infinite;
+}
+
+.ayudante:hover .pikachu {
+    transition: all 0.5s linear;
+    opacity: 0;
+    transform: rotateY(180deg)
+}
+
+.ayudante:hover {
+    transform:  rotateY(180deg) rotate(20deg);
+}
+
+.nombre {
+    position: absolute;
+    margin-top: -150px;
+    margin-left: 100px;
+    width: 100px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: rotate(-20deg);
+}
+
+.ayudante:hover .nombre {
+    color: red;
+    opacity: 1;
+    transform: rotateY(180deg) rotate(-20deg);
+    background-color: white;
+}
+@keyframes girar {
+    0% {
+      transform: translate(0, 0); 
+    }
+    25% {
+      transform: translate(-1000px, 0);
+    }
+    50% {
+      transform: translate(-1000px, 50%); 
+    }
+    75% {
+      transform: translate(0, -1000px);
+    }
+    100% {
+      transform: translate(0, 0); 
+    }
+}
